@@ -25,8 +25,11 @@ type
     procedure Sair2Click(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
     procedure Salas1Click(Sender: TObject);
+    procedure Produtos1Click(Sender: TObject);
+    procedure ToolButton2Click(Sender: TObject);
   private
     procedure abrirCadastroSalas;
+    procedure abrirCadastroProdutos;
     { Private declarations }
   public
     { Public declarations }
@@ -39,7 +42,15 @@ implementation
 
 {$R *.dfm}
 
-uses uCadastroSalas;
+uses uCadastroSalas, uCadastroProdutos;
+
+procedure TfmPrincipal.abrirCadastroProdutos;
+begin
+  if(fmCadastroProdutos = nil) then
+    fmCadastroProdutos := TfmCadastroProdutos.Create(Self);
+
+  fmCadastroProdutos.Show;
+end;
 
 procedure TfmPrincipal.abrirCadastroSalas;
 begin
@@ -48,6 +59,11 @@ begin
 
   fmCadastroSalas.Show;
 
+end;
+
+procedure TfmPrincipal.Produtos1Click(Sender: TObject);
+begin
+  abrirCadastroProdutos;
 end;
 
 procedure TfmPrincipal.Sair2Click(Sender: TObject);
@@ -63,6 +79,11 @@ end;
 procedure TfmPrincipal.ToolButton1Click(Sender: TObject);
 begin
   abrirCadastroSalas;
+end;
+
+procedure TfmPrincipal.ToolButton2Click(Sender: TObject);
+begin
+  abrirCadastroProdutos;
 end;
 
 end.

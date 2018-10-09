@@ -1,31 +1,32 @@
-unit uCadastroSalas;
+unit uCadastroProdutos;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroBase, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroBase, Data.DB,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls,
   Vcl.Mask;
 
 type
-  TfmCadastroSalas = class(TfmCadastroBase)
+  TfmCadastroProdutos = class(TfmCadastroBase)
     fdDadosNOME: TStringField;
-    fdDadosCAPACIDADE: TIntegerField;
-    ld: TLabel;
-    edId: TDBEdit;
-    edNome: TDBEdit;
-    Label1: TLabel;
-    edCapacidade: TDBEdit;
-    Label2: TLabel;
+    fdDadosPRECO: TBCDField;
+    fdDadosBARRA: TStringField;
     fdDadosID: TFDAutoIncField;
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    Label1: TLabel;
+    edId: TDBEdit;
+    Label2: TLabel;
+    edNome: TDBEdit;
+    Label3: TLabel;
+    edPreco: TDBEdit;
+    Label4: TLabel;
+    edBarra: TDBEdit;
   private
     { Private declarations }
-
   protected
     function ValidarDados: Boolean; override;
 
@@ -34,7 +35,7 @@ type
   end;
 
 var
-  fmCadastroSalas: TfmCadastroSalas;
+  fmCadastroProdutos: TfmCadastroProdutos;
 
 implementation
 
@@ -42,13 +43,9 @@ implementation
 
 uses uSystemUtils;
 
-procedure TfmCadastroSalas.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  inherited;
-  fmCadastroSalas := nil;
-end;
+{ TfmCadastroBase1 }
 
-function TfmCadastroSalas.ValidarDados: Boolean;
+function TfmCadastroProdutos.ValidarDados: Boolean;
 begin
   if Trim(fdDadosNOME.AsString) = '' then
   begin
@@ -57,15 +54,13 @@ begin
     Exit(false);
   end;
 
-  if fdDadosCAPACIDADE.AsInteger <= 0 then
+  if fdDadosPRECO.AsCurrency <= 0 then
   begin
-    ShowInformation('Capacidade invalida!!!!!');
-    edCapacidade.SetFocus;
+    ShowInformation('Quer as coisas de graça meu fi??');
+    edPreco.SetFocus;
     Exit(false);
   end;
 
-
-    Result := true;
 end;
 
 end.

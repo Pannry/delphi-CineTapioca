@@ -48,6 +48,7 @@ object fmPrincipal: TfmPrincipal
       Top = 0
       Caption = 'ToolButton2'
       ImageIndex = 1
+      OnClick = ToolButton2Click
     end
   end
   object mmPrincipal: TMainMenu
@@ -64,6 +65,7 @@ object fmPrincipal: TfmPrincipal
       end
       object Produtos1: TMenuItem
         Caption = 'Produtos'
+        OnClick = Produtos1Click
       end
       object Sair1: TMenuItem
         Caption = '-'

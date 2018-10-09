@@ -6,7 +6,8 @@ uses
   uCadastroBase in 'uCadastroBase.pas' {fmCadastroBase},
   uCadastroSalas in 'uCadastroSalas.pas' {fmCadastroSalas},
   uDmConn in 'uDmConn.pas' {dmConn: TDataModule},
-  uSystemUtils in 'uSystemUtils.pas';
+  uSystemUtils in 'uSystemUtils.pas',
+  uCadastroProdutos in 'uCadastroProdutos.pas' {fmCadastroProdutos};
 
 {$R *.res}
 
