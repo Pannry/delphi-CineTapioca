@@ -3,12 +3,13 @@ inherited fmCadastroSalas: TfmCadastroSalas
   PixelsPerInch = 96
   TextHeight = 13
   inherited pcPrincipal: TPageControl
-    ActivePage = tsEdit
+    inherited tsDados: TTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
     inherited tsEdit: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 702
-      ExplicitHeight = 400
       inherited pnEdit: TPanel
         object ld: TLabel
           Left = 24

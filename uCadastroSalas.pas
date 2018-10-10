@@ -49,6 +49,7 @@ begin
 end;
 
 function TfmCadastroSalas.ValidarDados: Boolean;
+{TODO -oUece -cBug : Forçar atribução do valor ao field}
 begin
   if Trim(fdDadosNOME.AsString) = '' then
   begin
@@ -56,7 +57,6 @@ begin
     edNome.SetFocus;
     Exit(false);
   end;
-
   if fdDadosCAPACIDADE.AsInteger <= 0 then
   begin
     ShowInformation('Capacidade invalida!!!!!');

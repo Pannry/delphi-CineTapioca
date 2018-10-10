@@ -1,15 +1,16 @@
 inherited fmCadastroProdutos: TfmCadastroProdutos
-  Caption = 'fmCadastroProdutos'
+  Caption = 'Cadastro de produtos'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pcPrincipal: TPageControl
+    inherited tsDados: TTabSheet
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+    end
     inherited tsEdit: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 702
-      ExplicitHeight = 400
       inherited pnEdit: TPanel
-        ExplicitLeft = 150
         object Label1: TLabel
           Left = 16
           Top = 8
@@ -86,11 +87,13 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
       'Select * from produtos;')
     object fdDadosID: TFDAutoIncField
       DisplayLabel = 'Id'
+      DisplayWidth = 5
       FieldName = 'ID'
       ReadOnly = True
     end
     object fdDadosNOME: TStringField
       DisplayLabel = 'Nome'
+      DisplayWidth = 17
       FieldName = 'NOME'
       Origin = 'NOME'
       Required = True
@@ -99,6 +102,7 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
     object fdDadosPRECO: TBCDField
       DefaultExpression = '0'
       DisplayLabel = 'Pre'#231'o'
+      DisplayWidth = 11
       FieldName = 'PRECO'
       Origin = 'PRECO'
       Required = True
@@ -108,6 +112,7 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
     end
     object fdDadosBARRA: TStringField
       DisplayLabel = 'C'#243'digo de barras'
+      DisplayWidth = 41
       FieldName = 'BARRA'
       Origin = 'BARRA'
       Size = 30

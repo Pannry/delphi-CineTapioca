@@ -25,6 +25,7 @@ type
     edPreco: TDBEdit;
     Label4: TLabel;
     edBarra: TDBEdit;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   protected
@@ -45,6 +46,13 @@ uses uSystemUtils;
 
 { TfmCadastroBase1 }
 
+procedure TfmCadastroProdutos.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  inherited;
+  fmCadastroProdutos := nil;
+end;
+
 function TfmCadastroProdutos.ValidarDados: Boolean;
 begin
   if Trim(fdDadosNOME.AsString) = '' then
@@ -61,6 +69,7 @@ begin
     Exit(false);
   end;
 
+  Result := True;
 end;
 
 end.

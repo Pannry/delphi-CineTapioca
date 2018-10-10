@@ -11,9 +11,11 @@ object fmCadastroBase: TfmCadastroBase
   Font.Name = 'Tahoma'
   Font.Style = []
   FormStyle = fsMDIChild
+  KeyPreview = True
   OldCreateOrder = False
   Visible = True
   OnClose = FormClose
+  OnKeyDown = FormKeyDown
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -30,35 +32,35 @@ object fmCadastroBase: TfmCadastroBase
       object pnDadosButtons: TPanel
         Left = 0
         Top = 0
-        Width = 153
+        Width = 193
         Height = 348
         Align = alLeft
         BevelOuter = bvNone
         TabOrder = 0
         object btInserir: TButton
           Left = 11
-          Top = 9
-          Width = 130
-          Height = 25
-          Caption = 'Inserir Dados'
+          Top = 8
+          Width = 166
+          Height = 33
+          Caption = 'Inserir Dados (F2)'
           TabOrder = 0
           OnClick = btInserirClick
         end
         object btEditar: TButton
           Left = 11
-          Top = 40
-          Width = 130
-          Height = 25
-          Caption = 'Editar Dados'
+          Top = 47
+          Width = 166
+          Height = 33
+          Caption = 'Editar Dados (F3)'
           TabOrder = 1
           OnClick = btEditarClick
         end
         object btDeletar: TButton
           Left = 11
-          Top = 71
-          Width = 130
-          Height = 25
-          Caption = 'Deletar Dados'
+          Top = 88
+          Width = 166
+          Height = 33
+          Caption = 'Deletar Dados (F4)'
           TabOrder = 2
           OnClick = btDeletarClick
         end
@@ -93,9 +95,9 @@ object fmCadastroBase: TfmCadastroBase
         end
       end
       object grDados: TDBGrid
-        Left = 153
+        Left = 193
         Top = 0
-        Width = 549
+        Width = 509
         Height = 348
         Align = alClient
         DataSource = dsDados
@@ -112,23 +114,21 @@ object fmCadastroBase: TfmCadastroBase
     object tsEdit: TTabSheet
       Caption = 'tsEdit'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnEdit: TPanel
-        Left = 153
+        Left = 193
         Top = 0
-        Width = 549
+        Width = 509
         Height = 400
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
+        ExplicitLeft = 153
+        ExplicitWidth = 549
       end
       object pnEditButtons: TPanel
         Left = 0
         Top = 0
-        Width = 153
+        Width = 193
         Height = 400
         Align = alLeft
         BevelOuter = bvNone
@@ -136,18 +136,18 @@ object fmCadastroBase: TfmCadastroBase
         object btSalvar: TButton
           Left = 11
           Top = 9
-          Width = 130
-          Height = 25
-          Caption = 'Salvar'
+          Width = 166
+          Height = 33
+          Caption = 'Salvar (F9)'
           TabOrder = 0
           OnClick = btSalvarClick
         end
         object btCancelar: TButton
           Left = 11
-          Top = 40
-          Width = 130
-          Height = 25
-          Caption = 'Cancelar'
+          Top = 48
+          Width = 166
+          Height = 33
+          Caption = 'Cancelar (ESC)'
           TabOrder = 1
           OnClick = btCancelarClick
         end

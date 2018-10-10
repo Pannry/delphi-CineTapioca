@@ -58,7 +58,6 @@ begin
     fmCadastroSalas := TfmCadastroSalas.Create(Self);
 
   fmCadastroSalas.Show;
-
 end;
 
 procedure TfmPrincipal.Produtos1Click(Sender: TObject);
