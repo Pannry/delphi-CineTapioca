@@ -50,6 +50,20 @@ object fmPrincipal: TfmPrincipal
       ImageIndex = 1
       OnClick = ToolButton2Click
     end
+    object ToolButton3: TToolButton
+      Left = 112
+      Top = 0
+      Caption = 'ToolButton3'
+      ImageIndex = 2
+      OnClick = ToolButton3Click
+    end
+    object ToolButton4: TToolButton
+      Left = 168
+      Top = 0
+      Caption = 'ToolButton4'
+      ImageIndex = 3
+      OnClick = ToolButton4Click
+    end
   end
   object mmPrincipal: TMainMenu
     Left = 24
@@ -62,12 +76,20 @@ object fmPrincipal: TfmPrincipal
       end
       object Filmes1: TMenuItem
         Caption = 'Filmes'
+        OnClick = Filmes1Click
+      end
+      object sessao: TMenuItem
+        Caption = 'Sess'#227'o'
+        OnClick = sessaoClick
+      end
+      object Sair1: TMenuItem
+        Caption = '-'
       end
       object Produtos1: TMenuItem
         Caption = 'Produtos'
         OnClick = Produtos1Click
       end
-      object Sair1: TMenuItem
+      object N1: TMenuItem
         Caption = '-'
       end
       object Sair2: TMenuItem

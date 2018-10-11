@@ -185,8 +185,11 @@ end;
 
 procedure TfmCadastroBase.Edit;
 begin
-  fdDados.Edit;
-  GoToPageEdit;
+  if not(fdDados.IsEmpty) then
+  begin
+    fdDados.Edit;
+    GoToPageEdit;
+  end;
 end;
 
 procedure TfmCadastroBase.Save;

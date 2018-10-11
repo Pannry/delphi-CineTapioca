@@ -3,14 +3,15 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
   PixelsPerInch = 96
   TextHeight = 13
   inherited pcPrincipal: TPageControl
-    inherited tsDados: TTabSheet
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-    end
+    ActivePage = tsEdit
     inherited tsEdit: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 702
+      ExplicitHeight = 400
       inherited pnEdit: TPanel
+        ExplicitLeft = 199
+        ExplicitWidth = 509
         object Label1: TLabel
           Left = 16
           Top = 8
@@ -85,12 +86,6 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
   inherited fdDados: TFDQuery
     SQL.Strings = (
       'Select * from produtos;')
-    object fdDadosID: TFDAutoIncField
-      DisplayLabel = 'Id'
-      DisplayWidth = 5
-      FieldName = 'ID'
-      ReadOnly = True
-    end
     object fdDadosNOME: TStringField
       DisplayLabel = 'Nome'
       DisplayWidth = 17
@@ -116,6 +111,10 @@ inherited fmCadastroProdutos: TfmCadastroProdutos
       FieldName = 'BARRA'
       Origin = 'BARRA'
       Size = 30
+    end
+    object fdDadosID: TFDAutoIncField
+      FieldName = 'ID'
+      ReadOnly = True
     end
   end
 end

@@ -22,14 +22,24 @@ type
     tbPrincipal: TToolBar;
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    sessao: TMenuItem;
+    N1: TMenuItem;
+    ToolButton4: TToolButton;
     procedure Sair2Click(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
     procedure Salas1Click(Sender: TObject);
     procedure Produtos1Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
+    procedure ToolButton3Click(Sender: TObject);
+    procedure Filmes1Click(Sender: TObject);
+    procedure ToolButton4Click(Sender: TObject);
+    procedure sessaoClick(Sender: TObject);
   private
     procedure abrirCadastroSalas;
     procedure abrirCadastroProdutos;
+    procedure abrirCadastroFilmes;
+    procedure abrirCadastroSessao;
     { Private declarations }
   public
     { Public declarations }
@@ -42,7 +52,21 @@ implementation
 
 {$R *.dfm}
 
-uses uCadastroSalas, uCadastroProdutos;
+uses uCadastroSalas, uCadastroProdutos, uCadastroFilmes, uCadastroSessoes;
+
+{
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Abrir janelas
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}
+
+procedure TfmPrincipal.abrirCadastroFilmes;
+begin
+  if(fmCadastroFilmes = nil) then
+    fmCadastroFilmes := TfmCadastroFilmes.Create(Self);
+
+  fmCadastroFilmes.Show;
+end;
 
 procedure TfmPrincipal.abrirCadastroProdutos;
 begin
@@ -60,6 +84,20 @@ begin
   fmCadastroSalas.Show;
 end;
 
+procedure TfmPrincipal.abrirCadastroSessao;
+begin
+  if(fmCadastroSessao = nil) then
+    fmCadastroSessao := TfmCadastroSessao.Create(Self);
+
+  fmCadastroSessao.Show;
+end;
+
+{
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Botoes Abrir janelas
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+}
+
 procedure TfmPrincipal.Produtos1Click(Sender: TObject);
 begin
   abrirCadastroProdutos;
@@ -75,6 +113,11 @@ begin
   abrirCadastroSalas;
 end;
 
+procedure TfmPrincipal.sessaoClick(Sender: TObject);
+begin
+  abrirCadastroSessao;
+end;
+
 procedure TfmPrincipal.ToolButton1Click(Sender: TObject);
 begin
   abrirCadastroSalas;
@@ -83,6 +126,21 @@ end;
 procedure TfmPrincipal.ToolButton2Click(Sender: TObject);
 begin
   abrirCadastroProdutos;
+end;
+
+procedure TfmPrincipal.ToolButton3Click(Sender: TObject);
+begin
+  abrirCadastroFilmes;
+end;
+
+procedure TfmPrincipal.ToolButton4Click(Sender: TObject);
+begin
+  abrirCadastroSessao;
+end;
+
+procedure TfmPrincipal.Filmes1Click(Sender: TObject);
+begin
+  abrirCadastroFilmes;
 end;
 
 end.

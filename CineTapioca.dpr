@@ -7,7 +7,9 @@ uses
   uCadastroSalas in 'uCadastroSalas.pas' {fmCadastroSalas},
   uDmConn in 'uDmConn.pas' {dmConn: TDataModule},
   uSystemUtils in 'uSystemUtils.pas',
-  uCadastroProdutos in 'uCadastroProdutos.pas' {fmCadastroProdutos};
+  uCadastroProdutos in 'uCadastroProdutos.pas' {fmCadastroProdutos},
+  uCadastroFilmes in 'uCadastroFilmes.pas' {fmCadastroFilmes},
+  uCadastroSessoes in 'uCadastroSessoes.pas' {fmCadastroSessao};
 
 {$R *.res}
 

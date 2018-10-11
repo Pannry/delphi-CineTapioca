@@ -7,11 +7,12 @@ object dmConn: TdmConn
   object fcConn: TFDConnection
     Params.Strings = (
       
-        'Database=C:\Users\thale\Documents\Embarcadero\Studio\Projects\Si' +
-        'stemas\CineTapioca\CINETAPIOCA.FDB'
+        'Database=C:\Users\thale\Documents\Thales\delphi-CineTapioca\CINE' +
+        'TAPIOCA.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Left = 56
     Top = 16
